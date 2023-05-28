@@ -4,7 +4,7 @@ int check_double(int* arr, int n)
 {
     int i = 0;
 
-    while (arr[i])
+    while (i < CARD_SIZE)
     {
         if (arr[i] == n)
             return 0;
@@ -13,36 +13,22 @@ int check_double(int* arr, int n)
     return 1;
 }
 
-void    print_arr(int* arr)
+void    print_arr(int* arr, int arr_size)
 {
     int i;
 
-    for (i = 0; i < 40; i++)
-        printf("%d\n", arr[i]);
+    for (i = 0; i < arr_size; i++)
+        printf("%d; ", arr[i]);
 }
 
-void    arrncpy(int* src, int* dest, int min, int max)
+void    arrncpy(int* dest, int min, int max)
 {
     int i = 0;
-    int j = 0;
-	int count = (min - 1);
 
-    while (count <= max)
+    while (min < max + 1)
     {
-        if (src[i] >= min || src[i] < max)
-        {
-            dest[j] = src[i];
-            j++;
-			count++;
-        }
+        dest[i] = min++;
         i++;
     }
-}
 
-int arr_len(int* arr)
-{
-    int i = 0;
-    while (arr[i + 1])
-        i++;
-    return (i);
 }

@@ -7,15 +7,16 @@
 # define TRUE 1
 # define FALSE 0
 
+# define CARD_SIZE 40
+# define TRUMP_SIZE 10
+
 # define DESTROY_NOTIFY 17
 
-# include "../mlx_linux/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <time.h>
-# include <X11/keysym.h>
 
 typedef struct s_data {
 	void	*img;
@@ -34,17 +35,17 @@ typedef struct s_player {
 }			t_player;
 
 typedef struct s_table {
-	int	deck[40];
-	int flop[4];
-	int	trumps[10];
-	int	team_pts[2];
+	int*	deck;
+	int 	flop[4];
+	int*	trumps;
+	int		team_pts[2];
 }		t_table;
 
-int*	deck_init(int* arr);
-void    print_arr(int* arr);
+int*    deck_init();
+void    print_arr(int* arr, int arr_size);
 int		check_double(int* arr, int n);
-int*	trump_init(int* trumps, int* deck);
-void    arrncpy(int* src, int* dest, int min, int max);
+int*   	trump_init(int* deck);
+void    arrncpy(int* dest, int min, int max);
 int		arr_len(int* arr);
 
 #endif
