@@ -1,0 +1,9 @@
+player struct:
+-hand[10];
+-status;
+
+table struct:
+-deck[30];
+-cards[4];
+-trump[10];
+-team_pts[2];
