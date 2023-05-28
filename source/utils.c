@@ -25,13 +25,15 @@ void    arrncpy(int* src, int* dest, int min, int max)
 {
     int i = 0;
     int j = 0;
+	int count = (min - 1);
 
-    while (src[i] || dest[j])
+    while (count <= max)
     {
-        if (src[i] > (min - 1) && src[i] < (max + 1))
+        if (src[i] >= min || src[i] < max)
         {
             dest[j] = src[i];
             j++;
+			count++;
         }
         i++;
     }
