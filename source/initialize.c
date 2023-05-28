@@ -22,7 +22,7 @@ int*    deck_init()
     return deck;
 }
 
-int*   trump_init(int* deck)
+int*    trump_init(int* deck)
 {
     int     trump;
     int*    trumps;
@@ -33,9 +33,9 @@ int*   trump_init(int* deck)
 
     decider = (rand() % (max - min + 1)) + min;
     trumps = malloc(sizeof(int) * TRUMP_SIZE);
-    if (decider == 1)
+    if (decider == TOP)
         trump = deck[0];
-    else if (decider == 2)
+    else if (decider == BOTTOM)
         trump = deck[CARD_SIZE - 1];
     if (trump <= 10)
         arrncpy(trumps, 1, 10);
@@ -46,4 +46,26 @@ int*   trump_init(int* deck)
     else if (trump > 30 && trump < 41)
         arrncpy(trumps, 31, 40);
     return trumps;
+}
+
+void    give_cards(int top_or_bottom, t_table *table)
+{
+    int     i;
+    int     j;
+
+    if (top_or_bottom == TOP || top_or_bottom == BOTTOM)
+    {
+        table->player_1.hand = malloc(sizeof(int) * 10);
+        for (i = 0, j = 0; i < 10; i++, j++)
+            table->player_1.hand[j] = table->deck[i];
+        table->player_2.hand = malloc(sizeof(int) * 10);
+        for (i = 10, j = 0; i < 20; i++, j++)
+            table->player_2.hand[j] = table->deck[i];
+        table->player_3.hand = malloc(sizeof(int) * 10);
+        for (i = 20, j = 0; i < 30; i++, j++)
+            table->player_3.hand[j] = table->deck[i];
+        table->player_4.hand = malloc(sizeof(int) * 10);
+        for (i = 30, j = 0; i < 40; i++, j++)
+            table->player_4.hand[j] = table->deck[i];
+    }
 }

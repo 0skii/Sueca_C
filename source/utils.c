@@ -19,6 +19,8 @@ void    print_arr(int* arr, int arr_size)
 
     for (i = 0; i < arr_size; i++)
         printf("%d; ", arr[i]);
+    printf("\n");
+
 }
 
 void    arrncpy(int* dest, int min, int max)

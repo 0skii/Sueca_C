@@ -7,8 +7,12 @@
 # define TRUE 1
 # define FALSE 0
 
+# define TOP 1
+# define BOTTOM 2
+
 # define CARD_SIZE 40
 # define TRUMP_SIZE 10
+# define HAND_SIZE 10
 
 # define DESTROY_NOTIFY 17
 
@@ -25,10 +29,14 @@ typedef struct s_player {
 }			t_player;
 
 typedef struct s_table {
-	int*	deck;
-	int*	flop;
-	int*	trumps;
-	int*	team_pts;
+	t_player	player_1;
+	t_player	player_2;
+	t_player	player_3;
+	t_player	player_4;
+	int*		deck;
+	int*		flop;
+	int*		trumps;
+	int*		team_pts;
 }		t_table;
 
 int*    deck_init();
@@ -37,5 +45,6 @@ int		check_double(int* arr, int n);
 int*   	trump_init(int* deck);
 void    arrncpy(int* dest, int min, int max);
 int		arr_len(int* arr);
+void    give_cards(int top_or_bottom, t_table *table);
 
 #endif
