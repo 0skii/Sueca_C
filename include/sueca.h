@@ -18,27 +18,17 @@
 # include <fcntl.h>
 # include <time.h>
 
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	int		height;
-	int     width;
-}			t_data;
-
 typedef struct s_player {
-	int		hand[10];
+	int*    hand;
 	int		status;
 	char*	name;
 }			t_player;
 
 typedef struct s_table {
 	int*	deck;
-	int 	flop[4];
+	int*	flop;
 	int*	trumps;
-	int		team_pts[2];
+	int*	team_pts;
 }		t_table;
 
 int*    deck_init();
