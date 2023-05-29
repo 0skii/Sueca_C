@@ -14,6 +14,8 @@
 # define TRUMP_SIZE 10
 # define HAND_SIZE 10
 
+# define ALL_PLAYERS 5
+
 # define DESTROY_NOTIFY 17
 
 # include <stdlib.h>
@@ -46,5 +48,6 @@ int*   	trump_init(int* deck, t_table *table);
 void    arrncpy(int* dest, int min, int max);
 int		arr_len(int* arr);
 void    give_cards(int top_or_bottom, t_table *table);
+void    status_on(int player_nbr, t_table *table);
 
 #endif
