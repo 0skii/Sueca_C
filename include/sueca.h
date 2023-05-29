@@ -49,5 +49,6 @@ void    arrncpy(int* dest, int min, int max);
 int		arr_len(int* arr);
 void    give_cards(int top_or_bottom, t_table *table);
 void    status_on(int player_nbr, t_table *table);
+void    status_off(int player_nbr, t_table *table);
 
 #endif

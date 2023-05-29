@@ -113,3 +113,22 @@ void    status_on(int player_nbr, t_table *table)
         table->player_4.status = TRUE;
     }
 }
+
+void    status_off(int player_nbr, t_table *table)
+{
+    if (player_nbr == 1)
+        table->player_1.status = FALSE;
+    else if (player_nbr == 2)
+        table->player_2.status = FALSE;
+    else if (player_nbr == 3)
+        table->player_3.status = FALSE;
+    else if (player_nbr == 4)
+        table->player_4.status = FALSE;
+    else if (player_nbr == 5)
+    {
+        table->player_1.status = FALSE;
+        table->player_2.status = FALSE;
+        table->player_3.status = FALSE;
+        table->player_4.status = FALSE;
+    }
+}
