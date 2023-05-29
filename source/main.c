@@ -7,10 +7,9 @@ int main()
     table.deck = deck_init();
     printf ("DECK = \n");
     print_arr(table.deck, CARD_SIZE);
-    table.trumps = trump_init(table.deck);
+    table.trumps = trump_init(table.deck, &table);
     printf("TRUMPS = \n");
     print_arr(table.trumps, TRUMP_SIZE);
-    give_cards(TOP, &table);
     printf("\nplayer_1 hand: \n");
     print_arr(table.player_1.hand, HAND_SIZE);
     printf("\nplayer_2 hand: \n");

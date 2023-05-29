@@ -42,7 +42,7 @@ typedef struct s_table {
 int*    deck_init();
 void    print_arr(int* arr, int arr_size);
 int		check_double(int* arr, int n);
-int*   	trump_init(int* deck);
+int*   	trump_init(int* deck, t_table *table);
 void    arrncpy(int* dest, int min, int max);
 int		arr_len(int* arr);
 void    give_cards(int top_or_bottom, t_table *table);
